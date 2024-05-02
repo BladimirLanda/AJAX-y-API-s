@@ -1,0 +1,158 @@
+/*Media Query*/
+@mixin tablets {
+    @media screen and (max-width: 50rem) { @content };
+}
+
+/*----------*/
+
+
+* {
+    box-sizing: border-box;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.header {
+    width: 100%;
+
+    .header__init{
+        background-color: rgb(78, 78, 255);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        @include tablets() {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        h1 {
+            color: rgb(255, 149, 0);
+            font-size: 2.5rem;
+            font-weight: 600;
+
+            @include tablets() {
+                font-size: 2rem;
+            }
+        }
+
+        i {
+            width: 10rem;
+            padding: 0.1rem;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.main {
+    width: 100%;
+
+    .main__search {
+        text-align: center;
+        padding: 1rem;
+        background-color: rgb(255, 149, 0);
+
+        .main__inputs {
+            margin: 0.3rem;
+
+            @include tablets() {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0 2rem;
+            }
+
+            #digimon__searchName {
+                font-size: 1.2rem;
+                font-weight: 600;
+                background-color: rgb(240, 255, 255);
+                border-radius: 0.5rem;
+                box-shadow: 0.1rem 0.1rem 0.5rem 0.2rem rgb(128, 128, 128);
+
+            }
+
+            #digimon__searchLevel {
+                font-size: 1.2rem;
+                font-weight: 600;
+                background-color: rgb(240, 255, 255);
+                border-radius: 0.5rem;
+                box-shadow: 0.1rem 0.1rem 0.5rem 0.2rem rgb(128, 128, 128);
+            }
+        }
+
+        .main__buttons {
+            margin: 0.3rem;
+
+            #search-button {
+                padding: 0.3rem 1rem;
+                margin-top: 0.5rem;
+                font-size: 1rem;
+                font-weight: 400;
+                color: rgb(255, 149, 0);
+                background-color: rgb(0, 0, 0);
+                cursor: pointer;
+            }
+
+            #rest-button {
+                padding: 0.3rem 1rem;
+                margin-top: 0.5rem;
+                font-size: 1rem;
+                font-weight: 400;
+                color: rgb(255, 149, 0);
+                background-color: rgb(0, 0, 0);
+                cursor: pointer;
+            }
+
+        }
+    }
+
+    .main__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(18rem, 1fr));
+        gap: 1rem;
+
+        width: 80%;
+        padding: 1rem;
+        margin: 0 auto;
+
+        @include tablets() {
+            grid-template-columns: repeat(auto-fill,minmax(15rem, 1fr));
+        }
+
+        .digimon-card {
+            border-radius: 1rem;
+            box-shadow: 0.1rem 0.1rem 0.5rem 0.2rem rgb(255, 192, 74);
+            padding: 0.5rem;
+
+            .digimon-info {
+                text-align: center;
+                font-size: 1rem;
+                font-weight: 500;
+
+                .digimon-level {
+                    margin: 0.5rem;
+                    background-color: rgb(0, 255, 255);
+                    border-radius: 1rem;
+                    box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem rgb(0, 0, 0);
+                }
+
+            }
+
+            .digimon-img-container {
+                text-align: center;
+                width: 100%;
+
+                .digimon-img {
+                    width: 10rem;
+                }
+            }
+        }
+
+    }
+}
+

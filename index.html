@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digimon-API</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__init">
+            <h1>Digimon Adventure</h1>
+            <i class="header__logo">
+                <img src="img/logo__digimon.png" alt="logo__digimon">
+            </i>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="main__search">
+            <div class="main__inputs">
+                <input type="text" id="digimon__searchName" placeholder="Nombre Digimon">
+                <input type="text" id="digimon__searchLevel" placeholder="Nivel de Digimon">
+            </div>
+            
+            <div class="main__buttons">
+                <button id="search-button">Buscar</button>
+                <button id="rest-button">Restaurar</button>
+            </div>
+        </div>
+
+        <div class="main__grid" id="digimon__grid">
+
+        </div>
+
+    </main>
+
+    <script src="js/functions.js"></script>
+</body>
+
+</html>
